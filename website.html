@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="美觀.css">
+        <meta charset="UTF-8"/>
+        <title>記帳網站</title>
+    </head>
+    <body>
+        <img src="background.jpg" id="img">
+        <div id="leftup" style="position:absolute;top:0;"></div>
+        <div id="rightup" style="position:absolute;top:0;right:0;width:300px;"></div>
+        <div style="position:absolute;left:0;bottom:0;">
+            <button id="reset">重設預算和支出</button>
+            <br/><br/>
+            <button id="addbudget">增加預算</button>
+            <br/><br/>
+            <button id="addspent">增加支出</button>
+            <br/><br/>
+        </div>
+        <br/>
+        <div class="calender">
+            <span style="size:10px;margin:0px 37px 0px 37px;">日</span>
+            <span style="size:10px;margin:0px 37px 0px 37px;">一</span>
+            <span style="size:10px;margin:0px 37px 0px 37px;">二</span>
+            <span style="size:10px;margin:0px 37px 0px 37px;">三</span>
+            <span style="size:10px;margin:0px 37px 0px 37px;">四</span>
+            <span style="size:10px;margin:0px 37px 0px 37px;">五</span>
+            <span style="size:10px;margin:0px 37px 0px 37px;">六</span>
+            <br/><br/>
+            <div id="cal"></div>
+        </div>
+        <div class="inputcontainer" style="display: none;" id="input">
+            <span>1</span>
+            <form  class="formcontainer">
+                <input type="radio" id="s" name="sorb" value="spent" checked>
+                <label for="s">支出</label>
+                <input type="radio" id="b" name="sorb" value="budget">
+                <label for="b">收入</label>
+                <br/>
+                <input type="text" id="money" value="0">
+                <label for="money">元</label>
+                <br/>
+                <span>原因:</span>
+                <br/>
+                <input type="text" id="reason" value="">
+                <br/>
+                <input type="button" id="cancel" value="cancel">
+                <input type="button" id="sub" value="confirm">
+            </form>
+            <span>2</span>
+        </div>
+        
+        <script src="計算.js"></script>
+    </body>
+</html>
+
+
+
+
+
