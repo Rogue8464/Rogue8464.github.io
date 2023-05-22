@@ -28,7 +28,6 @@ img {
     z-index: 3;
     opacity: 0.5;
 }
-
 body {
     height: 100%;
     margin: 0;
@@ -36,9 +35,7 @@ body {
 }
 .calender{
     position: absolute;
-    width: auto;
-    height: auto;
-    left: 30%;
-
-    top: 35%;
+    left:50%;
+    top: 50%;    
+    transform: translate(-50%, -50%);
 }
