@@ -34,8 +34,6 @@ body {
     z-index: 1;
 }
 .calender{
-    width: auto;
-    height: auto;
     position: absolute;
     left:50%;
     top: 50%;    
