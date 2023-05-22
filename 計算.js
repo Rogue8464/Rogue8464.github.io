@@ -17,10 +17,6 @@ else if(month == 2){
 else{
     days = 30;
 }
-
-
-
-
 for(var i=0;i<space;i++){
     cal.innerHTML = cal.innerHTML + `
         <button id="useless" style="width:80px;margin:5px 5px 5px 5px;visibility:hidden;">useless</button>
@@ -43,8 +39,8 @@ function count(){
 }
 count();
 reset.addEventListener("click",function(){
-    budget = parseInt(prompt("請輸入預算"));
-    spent = parseInt(prompt("請輸入支出"));
+    budget = parseInt(prompt("請輸入預算" , 0));
+    spent = parseInt(prompt("請輸入支出" , 0));
     count();
 })
 addbudget.addEventListener("click",function(){
@@ -62,16 +58,31 @@ function date_click(x){
     document.getElementById("input").style.display = "flex";
 }
 sub.addEventListener("click",function(){
-    if(document.getElementById("s").checked) line+=" 支出 ";
-    else line+=" 收入 ";
-    line = line + document.getElementById("money").value + " 元\n原因: ";
-    line+=document.getElementById("reason").value;
-    document.getElementById("input").style.display = "none";
-    document.getElementById("img").style.display = "none";
-    document.getElementById("money").value="0";
-    document.getElementById("reason").value="";
-    alert(line);
-    line="";
+    const regex = /^[0-9]+$/;
+    if(!regex.test(document.getElementById("money").value)){
+        alert("請輸入數字");
+        document.getElementById("money").value="0";
+        document.getElementById("reason").value="";
+    }
+    else{
+        if(document.getElementById("s").checked){
+            line+=" 支出 ";
+            spent = spent + parseInt(document.getElementById("money").value);
+        }
+        else{
+            line+=" 收入 ";
+            budget = budget + parseInt(document.getElementById("money").value);
+        }
+        line = line + parseInt(document.getElementById("money").value) + " 元\n原因: ";
+        line+=document.getElementById("reason").value;
+        document.getElementById("input").style.display = "none";
+        document.getElementById("img").style.display = "none";
+        document.getElementById("money").value="0";
+        document.getElementById("reason").value="";
+        alert(line);
+        line="";
+        count();
+    }
 })
 cancel.addEventListener("click",function(){
     document.getElementById("input").style.display = "none";
