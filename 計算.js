@@ -3,7 +3,7 @@ var spent = 0; //支出變數
 var currentdate = new Date();
 var month = currentdate.getMonth() + 1;
 currentdate.setDate(1);
-//const date = [];
+let array=["日","一","二","三","四","五","六"];
 var days;
 var space = currentdate.getDay();
 if(month==1  || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
@@ -17,6 +17,12 @@ else if(month == 2){
 }
 else{
     days = 30;
+}
+
+for(var i=0;i<7;i++){
+    cal.innerHTML = cal.innerHTML + `
+        <button style="width:80px;margin:5px 5px 5px 5px;background-color:white;border:0px;">${array[i]}</button>
+    `
 }
 
 for(var i=0;i<space;i++){
