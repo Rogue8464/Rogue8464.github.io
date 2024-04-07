@@ -24,7 +24,7 @@ for(var i=0;i<7;i++){
         <button style="width:80px;margin:5px 5px 5px 5px;background-color:white;border:0px;">${array[i]}</button>
     `
 }
-cal.innerHTML = cal.innerHTML + `</br>`;
+cal.innerHTML = cal.innerHTML + `<br/>`;
 for(var i=0;i<space;i++){
     cal.innerHTML = cal.innerHTML + `
         <button id="useless" style="width:80px;margin:5px 5px 5px 5px;visibility:hidden;">useless</button>
